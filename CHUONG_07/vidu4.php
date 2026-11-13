@@ -1,28 +1,26 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php
-    $servername = "localhost";
-    $database = "quan ly ban hang(1)";
-    $username = "root";
-    $password = "";
-    //create connection
-    $conn = mysqli_connect($servername, $username, $password, $database);
-    //Thực hiện lệnh UPDATE
-    
-    $sql = "UPDATE khachhang SET tenkh='Trần Văn Ơn' WHERE makh='K007'";
-    if($result = mysqli_query($conn, $sql)){
-        echo "Mẫu tin đã được thêm thành công.";
-    }
-    else{
-        echo "Thêm dữ liệu thất bại." . mysqli_error($conn);
-    }
+<?php
+$servername = "localhost";
+$database = "quan ly ban hang";
+$username = "root";
+$password = "";
 
-    mysqli_close($conn);
-    ?>
-</body>
-</html>
+
+$conn = mysqli_connect($servername, $username, $password, $database);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+
+$sql = "UPDATE khachhang SET tenkh='Nguyễn Phương' WHERE makh='KH01'";
+
+$result = mysqli_query($conn, $sql);
+
+
+if ($result) {
+    echo "Cập nhật thành công";
+} else {
+    echo "Cập nhật thất bại: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>

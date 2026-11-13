@@ -1,22 +1,21 @@
 <?php
 $servername = "localhost";
+$database = "quan ly ban hang";
 $username = "root";
 $password = "";
-$database = "quan ly ban hang(1)";
 
-// Kết nối đến cơ sở dữ liệu
+// Tạo kết nối
 $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn) {
-    die("Kết nối thất bại: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-// Câu lệnh SQL thêm dữ liệu vào bảng khachhang
-// Cấu trúc cột: makh, tenkh, namsinh, dienthoai, diachi
-$sql = "INSERT INTO khachhang (makh, tenkh, namsinh, dienthoai, diachi) VALUES ('K012', 'Trần Văn tèo', '2002', '0912345679', 'Bạc Liêu')";
+// Câu lệnh SQL thêm dữ liệu 
+$sql = "INSERT INTO khachhang VALUES ('KH21', 'Hoàng Trọng Nhân', '2006', '0948042089', 'Bạc Liêu')";
 
 $result = mysqli_query($conn, $sql);
 
-// Kiểm tra kết quả thêm dữ liệu giống như ví dụ
+// Kiểm tra kết quả 
 if ($result) {
     echo "Mẫu tin đã được thêm.";
 } else {

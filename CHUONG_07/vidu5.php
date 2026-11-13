@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$database = "quan ly ban hang(1)";
+$database = "quan ly ban hang";
 $username = "root";
 $password = "";
 
@@ -11,7 +11,7 @@ if (!$conn) {
 }
 
 // Câu lệnh SQL xóa dữ liệu (ví dụ: xóa khách hàng có mã 'KH01')
-$sql = "DELETE FROM khachhang WHERE makh='K012'";
+$sql = "DELETE FROM khachhang WHERE makh='KH01'";
 
 $result = mysqli_query($conn, $sql);
 
